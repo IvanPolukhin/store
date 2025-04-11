@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /*page background*/
+    --dark-gradient-inner: rgba(40, 40, 40, 1);
+    --dark-gradient-middle: rgba(25, 25, 25, 0.85);
+    --dark-gradient-outer: rgba(10, 10, 10, 1);
+
+    /*card background*/
+    --card-gradient-start: #424242;
+    --card-gradient-end: rgba(66, 66, 66, 0.31);
+  }
+}
