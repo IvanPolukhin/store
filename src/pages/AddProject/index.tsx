@@ -6,11 +6,8 @@ import { DocumentIcon } from 'src/icons'
 
 const AddProject = () => {
   return (
-    <div className="text-white relative z-10">
-      <div
-        className="relative select-none"
-        style={{ height: '25vh', minHeight: '150px' }}
-      >
+    <div className="relative z-10">
+      <div className="relative select-none h-[25vh] min-h-[150px]">
         <div className="absolute xs:left-1/2 xs:top-[2vh] xs:w-[200px] xs:-translate-x-1/2 sm:left-1/2 sm:top-[0vh] sm:w-[220px] sm:-translate-x-1/2 md:left-1/2 md:top-[0vh] md:w-[220px] md:-translate-x-1/2 z-[2]">
           <img
             src="/assets/img/AddProjectPNG/projectPlus.png"

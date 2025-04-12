@@ -8,10 +8,7 @@ import BlurredContainer from 'src/components/ui/BlurredContainer'
 const Menu = () => {
   return (
     <div className="relative z-10">
-      <div
-        className="relative select-none"
-        style={{ height: '25vh', minHeight: '150px' }}
-      >
+      <div className="relative select-none h-[25vh] min-h-[150px]">
         <div className="absolute xs:left-[0vw] xs:top-[12vh] xs:w-[110px] sm:left-[0vw] sm:top-[10vh] sm:w-[130px] md:left-[0vw] md:top-[10vh] md:w-[140px] z-[1]">
           <img
             src="/assets/img/MenuPNG/BgTelegram.png"

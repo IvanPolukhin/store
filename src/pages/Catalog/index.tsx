@@ -12,11 +12,13 @@ import NavBar from 'src/features/NavBar'
 const Catalog = () => {
   const { Component, data, error, isLoading, isValidSource } = useCatalog()
 
-  if (isLoading) return <LoadingWrapper isLoading={true} />
-  if (error) return <div className="text-red-500">Ошибка загрузки данных</div>
-  if (!isValidSource) return <div>Неизвестный источник</div>
-
-  return (
+  return isLoading ? (
+    <LoadingWrapper isLoading={true} />
+  ) : error ? (
+    <div className="text-red-500">Ошибка загрузки данных</div>
+  ) : !isValidSource ? (
+    <div>Неизвестный источник</div>
+  ) : (
     <>
       <div className="overflow-auto flex justify-center">
         <div className="w-full max-w-[500px]">

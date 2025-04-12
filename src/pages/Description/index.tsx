@@ -19,56 +19,51 @@ const Description = () => {
     componentType,
   } = useDescription()
 
-  if (!product) {
-    return (
-      <>
+  return (
+    <>
+      {!product ? (
         <div className="overflow-auto flex justify-center">
           <div className="w-full max-w-[500px]">
             <p className="text-center text-red-500">Продукт не найден</p>
           </div>
         </div>
-        <NavBar />
-      </>
-    )
-  }
+      ) : (
+        <div className="overflow-auto flex justify-center">
+          <div className="w-full max-w-[500px] flex flex-col gap-4">
+            <div className="flex justify-center">
+              <DescriptionCard
+                product={product}
+                componentType={componentType}
+                gender={gender}
+              />
+            </div>
 
-  return (
-    <>
-      <div className="overflow-auto flex justify-center">
-        <div className="w-full max-w-[500px] flex flex-col gap-4">
-          <div className="flex justify-center">
-            <DescriptionCard
-              product={product}
+            <DescriptionChannel
               componentType={componentType}
-              gender={gender}
+              priceData={product.price}
+              selectedPrice={selectedPrice}
+              onSelectPrice={handlePriceSelect}
             />
-          </div>
 
-          <DescriptionChannel
-            componentType={componentType}
-            priceData={product.price}
-            selectedPrice={selectedPrice}
-            onSelectPrice={handlePriceSelect}
-          />
+            <FormatOptions
+              formats={formats}
+              selectedFormat={selectedFormat}
+              onSelect={handleSelectFormat}
+              componentType={componentType}
+              selectedPrice={selectedPrice}
+            />
 
-          <FormatOptions
-            formats={formats}
-            selectedFormat={selectedFormat}
-            onSelect={handleSelectFormat}
-            componentType={componentType}
-            selectedPrice={selectedPrice}
-          />
-
-          <div className="mt-auto flex items-center justify-center">
-            <Button
-              onClick={handleAddToCart}
-              className="max-w-[390px] w-full border border-[#AE8A64] py-3 rounded-md mt-10"
-            >
-              Добавить
-            </Button>
+            <div className="mt-auto flex items-center justify-center">
+              <Button
+                onClick={handleAddToCart}
+                className="max-w-[390px] w-full border border-[#AE8A64] py-3 rounded-md mt-10"
+              >
+                Добавить
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <NavBar />
     </>
   )

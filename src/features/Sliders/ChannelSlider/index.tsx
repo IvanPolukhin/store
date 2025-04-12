@@ -1,7 +1,5 @@
 import Button from 'src/components/ui/Button'
-
 import { channelSliderItems } from 'src/features/Sliders/ChannelSlider/helpers.ts'
-
 import { useGenericSlider } from 'src/hooks/useGenericSlider'
 
 const ChannelSlider = () => {
@@ -11,13 +9,7 @@ const ChannelSlider = () => {
     <div className="relative flex items-center w-full mb-4">
       <div
         ref={containerRef}
-        className="flex w-full overflow-x-auto touch-pan-x scroll-smooth no-scrollbar"
-        style={{
-          gap: '0.5rem',
-          padding: '0.5rem',
-          scrollBehavior: 'smooth',
-          overscrollBehavior: 'contain',
-        }}
+        className="flex w-full overflow-x-auto touch-pan-x scroll-smooth no-scrollbar gap-2 p-2 overscroll-contain"
       >
         {channelSliderItems.map((item, index) => (
           <Button

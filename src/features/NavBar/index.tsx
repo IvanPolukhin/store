@@ -25,11 +25,10 @@ const NavBar = () => {
       <div className="h-[100px] w-full"></div>
 
       <div
-        className={`fixed left-0 right-0 mx-auto max-w-[460px] w-[90%] rounded-2xl bg-opacity-30 backdrop-blur-md transition-all duration-300 z-50 
-          ${isScrolledToBottom ? 'bottom-4' : isScrollable ? 'bottom-8' : 'bottom-4'}`}
-        style={{
-          backgroundColor: '#2222234D',
-        }}
+        className={`fixed left-0 right-0 mx-auto max-w-[460px] w-[90%] rounded-2xl 
+        bg-[rgba(34,34,35,0.3)] backdrop-blur-md transition-all duration-300 z-50
+         ${isScrolledToBottom ? 'bottom-4' : isScrollable ? 'bottom-8' : 'bottom-4'}
+        `}
       >
         <div className="flex justify-around items-center py-4">
           <Button
